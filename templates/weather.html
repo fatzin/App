@@ -1,0 +1,43 @@
+{% extends 'modelo.html' %}
+{%load static %}
+
+{%block hrefs%}
+<a href="/">Home</a>
+<a href="/url">URL</a>
+<a href="/weather" class="active">Temperatura</a>
+<a href="/moeda">Moeda</a>
+{%endblock%}
+
+
+{%block conteudo%}
+  <div class="url-box"> 
+    <h1>Escolha uma cidade para ver a temperatura:</h1>       
+    <form action="{% url 'weather' %}" id="post-form" method="POST">{% csrf_token %}
+    <input type="text" class="form-control" name="city" placeholder="Escolha uma cidade. . .">
+        <div class="buttons">
+            <input type="submit" id="shorten" class="diminuir" value="Enviar" >
+      </div>
+    </form>
+    {% if status == "1"%}
+    <p style="color: red" class="status1m">Ocorreu um erro.</p>
+    {%endif%}
+        {% if country_code %}
+        <div class="tempo">
+          <div class="">
+          <div class="">
+            <h4><span class="spanbox">País:</span> {{country_code}}</h4>
+            <h4><span class="spanbox">Coordenadas [X,Y]:</span> {{coordinates}}</h4>
+            <h4><span class="spanbox">Temperatura:</span> {{temp}}</h4>
+            <h4><span class="spanbox">Pressão:</span> {{pressure}} </h4>
+            <h4><span class="spanbox">Humidade: </span> {{humidity}} %</h4>
+            <h4 class="tempo"><span class="spanbox">Tempo:  </span> {{description}} <img 
+            src="http://openweathermap.org/img/w/{{icon}}.png" alt="Image" class="iconweather"></h4>
+
+            </div>
+            </div>
+            </div>
+          {% endif %}
+       
+  
+
+{%endblock%}

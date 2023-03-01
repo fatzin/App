@@ -1,0 +1,50 @@
+{% extends 'modelo.html' %}
+{%load static %}
+
+{%block hrefs%}
+<a href="/">Home</a>
+<a href="/url">URL</a>
+<a href="/weather">Temperatura</a>
+<a href="/moeda" class="active">Moeda</a>
+{%endblock%}
+
+
+{%block conteudo%}
+  <div class="url-box"> 
+    <h1>Conversor de moedas</h1>
+    <br>
+    <div class="wrapper">
+        <form action="#" class="formoeda">
+          <div class="amount">
+            <p>Entre com o valor</p>
+            <input type="text" value="1">
+          </div>
+          <div class="drop-list">
+            <div class="from">
+              <p>De</p>
+              <div class="select-box">
+                <img src="https://flagcdn.com/48x36/br.png" alt="flag">
+                <select> <!-- Options tag are inserted from JavaScript --> </select>
+              </div>
+            </div>
+            <div class="icon"><i class="fas fa-exchange-alt"></i></div>
+            <div class="to">
+              <p>Para</p>
+              <div class="select-box">
+                <img src="https://flagcdn.com/48x36/us.png" alt="flag">
+                <select> <!-- Options tag are inserted from JavaScript --> </select>
+              </div>
+            </div>
+          </div>
+          <div class="exchange-rate">Carregando dados...</div>
+          <button>Realizar troca</button>
+        </form>
+      </div>   
+    
+    {% if status == "1"%}
+    <p style="color: red" class="status1m">Ocorreu um erro.</p>
+    {%endif%}
+       
+  
+
+{%endblock%}

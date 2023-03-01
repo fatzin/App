@@ -1,0 +1,30 @@
+{% extends 'modelo.html' %}
+{%load static %}
+
+{%block hrefs%}
+<a href="/">Home</a>
+<a href="/url" class="active">URL</a>
+<a href="/weather">Temperatura</a>
+<a href="/moeda">Moeda</a>
+{%endblock%}
+
+
+{%block conteudo%}
+  <div class="url-box"> 
+    <h1>Cole a URL a ser encurtada</h1>       
+    <form action="{%url 'urlcurta' %}" id="post-form" method="POST">{% csrf_token %}
+      <h3>Digite o link que quer encurtar:</h3>
+      {{form.link}}
+      <h3 class="apelidolink">Digite o apelido do link:</h3>
+      {{form.link_encurtado}}
+      <br>
+      {% if status == "1"%}
+      <p style="color: red" class="status1m">O link digitado já existe</p>
+      {%endif%}
+      <div class="buttons">
+            <input type="submit" id="shorten" class="diminuir" value="Encurtar URL" >
+      </div>
+    </form>
+  </div>
+
+{%endblock%}

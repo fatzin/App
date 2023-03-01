@@ -1,0 +1,23 @@
+{% extends 'modelo.html' %}
+{%load static %}
+
+{%block hrefs%}
+<a href="/">Home</a>
+<a href="/url" class="active">URL</a>
+<a href="/weather">Temperatura</a>
+<a href="/moeda">Moeda</a>
+{%endblock%}
+
+
+{%block conteudo%}
+  <div class="url-box"> 
+    <p class="linkequals">Seu link é: <a href="http://127.0.0.1:8000/url/{{ link }}">http://127.0.0.1:8000/url/{{ link }}</a></p>
+    <img src="{% static 'img/qrcode.png' %}" alt="QRCode" style="
+    max-width: 200px;
+    max-height: 200px;
+    margin-bottom: 20px;" >
+    
+
+  </div>
+
+{%endblock%}

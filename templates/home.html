@@ -1,0 +1,87 @@
+{% extends 'modelo.html' %}
+{%load static %}
+
+{%block hrefs%}
+<a href="/" class="active">Home</a>
+<a href="/url">URL</a>
+<a href="/weather">Temperatura</a>
+<a href="/moeda">Moeda</a>
+{%endblock%}
+
+
+{%block conteudo%}
+
+<section class="home-section">
+    <div class="home-conteudo1">
+        <div class="home-django">
+            <h1>Sobre alguns Design Pattens utilizados no projeto.</h1>
+            <p>
+                <strong>Model-View-Controller (MVC)</strong>: O Django segue um padrão de design chamado
+                Model-View-Controller (MVC), que
+                separa a lógica de negócios da interface do usuário e ajuda a manter o código organizado e fácil de
+                manter.
+                <br><br>
+                <strong>Model-View-Template (MVT)</strong>: O Django segue um padrão de design semelhante ao MVC,
+                chamado Model-View-Template
+                (MVT). Nesse padrão, a camada de controle é substituída pela camada de template, que é responsável por
+                renderizar o HTML para o usuário final.
+                <br><br>
+                <strong>Object-Relational Mapping (ORM)</strong>: O Django usa um ORM (Mapeamento Objeto-Relacional),
+                que é uma técnica de
+                programação que mapeia objetos em um programa para tabelas em um banco de dados relacional.
+                <br><br>
+                <strong>Front Controller</strong>: O Django usa um Front Controller, que é um padrão de design que
+                centraliza o controle de
+                solicitações em um único ponto de entrada, permitindo que todas as solicitações passem por uma camada de
+                controle central antes de serem roteadas para o controlador apropriado.
+                <br><br>
+                <strong>URL Dispatch</strong>: O Django utiliza o padrão URL Dispatch para mapear URLs para views. Cada
+                URL é mapeada para
+                uma função de view que é responsável por retornar a resposta HTTP apropriada.
+                <br><br>
+                <strong>Middleware</strong>: O Django utiliza o padrão Middleware para adicionar funcionalidades extras
+                ao processamento de
+                solicitações e respostas HTTP. O middleware fica entre o servidor web e o aplicativo, podendo
+                interceptar e
+                processar as solicitações antes e/ou depois que elas chegam ao aplicativo.
+                <br><br>
+                <strong>Factory Method</strong>: O Django utiliza o padrão Factory Method para criar instâncias de
+                classes em tempo de
+                execução. Por exemplo, o Django usa a factory method para criar objetos de conexão com o banco de dados.
+                <br><br>
+                <strong>Dependency Injection</strong>: O Django usa o padrão Dependency Injection para injetar
+                dependências em classes e
+                funções, facilitando a criação de componentes com dependências claras e gerenciáveis.
+                <br><br>
+                <strong>Observer</strong>: O Django utiliza o padrão Observer para notificar os objetos de mudanças em
+                outros objetos. Por
+                exemplo, o Django usa o padrão Observer para notificar os modelos (models) quando as tabelas do banco de
+                dados são alteradas.
+                <br><br>
+                <strong>Representational State Transfer (REST)</strong>: O padrão REST é uma arquitetura de software que define um
+                conjunto de princípios para projetar APIs web. Em um sistema RESTful, as solicitações HTTP são mapeadas
+                para recursos (resources) que podem ser criados, lidos, atualizados e excluídos (CRUD). O REST é
+                amplamente utilizado em APIs web modernas e é suportado nativamente pelo Django através do framework
+                Django REST.
+            </p>
+        </div>
+    </div>
+    <div class="home-conteudo2">
+            <h1>Alunos</h1>
+            <h3>Felipe Antônio Gomes de Mattos - 201904204</h3>
+            <h3>Igor Guedes Ramalho - 202103734</h3>
+
+            <h1>Sobre o projeto final</h1>
+            <p>O projeto final foi usado utilizando um simples banco de dados para o processamento de informações na aba
+                URL.
+                <br><br>
+                Para o segundo app do projeto chamado de <strong>temperatura</strong> foi utilizado solicitações HTTP
+                para o consumo da API do <a href="https://openweathermap.org">OpenWeatherMap</a>.
+                <br><br>
+                Para o segundo app do projeto chamado de <strong>Moedas</strong> que é um conversor de moedas foi utilizado solicitações HTTP
+                para o consumo da API da <a href="https://www.exchangerate-api.com">ExchangeRate-API</a>.
+            </p>
+    </div>
+</section>
+
+{%endblock%}
